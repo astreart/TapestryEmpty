@@ -30,7 +30,7 @@
 		<p>Here is the value : ${someValue}</p>
 
 		<a href="#" t:type="PageLink" t:page="secure/Payment">
-			Go to the secure Payment page test
+			Go to the secure Payment page
 		</a>
 
 		<br />
