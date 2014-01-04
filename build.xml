@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project basedir="." default="deploy" name="Tapestry">
+	
+	
+	<!-- ******************************* BUILD CONFIGURATION PROPERTIES START ******************************* -->
+	<property name="APP_NAME" value="${appName}"/>
+	<property name="WEBLOGIC_USERNAME" value="${wlUser}" />
+	<property name="WEBLOGIC_PASSWORD" value="${wlPassword}" />
+	<property name="WEBLOGIC_HOSTNAME" value="${wlHostname}" />
+	<property name="WEBLOGIC_SERVERNAME" value="${wlServername}" />
+	<!-- ******************************* BUILD CONFIGURATION PROPERTIES END ******************************* -->
+	
+    <property name="debuglevel" value="source,lines,vars"/>
+    <property name="target" value="1.6"/>
+    <property name="source" value="1.6"/>
+	
+	<path id="Weblogic.jar">
+	    <pathelement path="wlfullclient.jar" />
+	</path>
+	<taskdef name="wldeploy" classpathref="Weblogic.jar" classname="weblogic.ant.taskdefs.management.WLDeploy"/>
+	
+    <path id="Web App Libraries.libraryclasspath">
+        <pathelement location="WebContent/WEB-INF/lib/antlr-2.7.7.jar"/>
+        <pathelement location="WebContent/WEB-INF/lib/antlr-runtime-3.3.jar"/>
+        <pathelement location="WebContent/WEB-INF/lib/commons-codec-1.5.jar"/>
+        <pathelement location="WebContent/WEB-INF/lib/javassist-3.12.1.GA.jar"/>
+        <pathelement location="WebContent/WEB-INF/lib/javax.inject-1.jar"/>
+        <pathelement location="WebContent/WEB-INF/lib/js-1.6R7.jar"/>
+        <pathelement location="WebContent/WEB-INF/lib/log4j-1.2.14.jar"/>
+        <pathelement location="WebContent/WEB-INF/lib/plastic-5.3.6.jar"/>
+        <pathelement location="WebContent/WEB-INF/lib/slf4j-api-1.6.1.jar"/>
+        <pathelement location="WebContent/WEB-INF/lib/slf4j-log4j12-1.6.1.jar"/>
+        <pathelement location="WebContent/WEB-INF/lib/stringtemplate-3.2.1.jar"/>
+        <pathelement location="WebContent/WEB-INF/lib/tapestry-core-5.3.6.jar"/>
+        <pathelement location="WebContent/WEB-INF/lib/tapestry-func-5.3.6.jar"/>
+        <pathelement location="WebContent/WEB-INF/lib/tapestry-ioc-5.3.6.jar"/>
+        <pathelement location="WebContent/WEB-INF/lib/tapestry-jquery.jar"/>
+        <pathelement location="WebContent/WEB-INF/lib/tapestry-json-5.3.6.jar"/>
+        <pathelement location="WebContent/WEB-INF/lib/tapestry-upload-5.3.6.jar"/>
+        <pathelement location="WebContent/WEB-INF/lib/tapestry-yuicompressor-5.3.6.jar"/>
+        <pathelement location="WebContent/WEB-INF/lib/tapestry5-annotations-5.3.6.jar"/>
+        <pathelement location="WebContent/WEB-INF/lib/yuicompressor-2.4.7.jar"/>
+    </path>
+    <path id="EAR Libraries.libraryclasspath"/>
+    <path id="Tapestry.classpath">
+        <pathelement location="build/classes"/>
+        <path refid="Web App Libraries.libraryclasspath"/>
+        <path refid="EAR Libraries.libraryclasspath"/>
+    </path>
+    <target name="init">
+    	<antcall target="clean"/>
+        <mkdir dir="build/classes"/>
+    	<mkdir dir="build/war"/>
+        <copy includeemptydirs="false" todir="build/classes">
+            <fileset dir="src">
+                <exclude name="**/*.java"/>
+            </fileset>
+        </copy>
+        <copy includeemptydirs="false" todir="build/classes">
+            <fileset dir="resources">
+                <exclude name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="clean">
+        <delete dir="build/classes"/>
+    	<delete dir="build/war"/>
+    </target>
+    <target depends="clean" name="cleanall"/>
+    <target depends="build-subprojects,build-project" name="build"/>
+    <target name="build-subprojects"/>
+    <target depends="init" name="build-project">
+        <echo message="========== BULDING PROJECT =========="/>
+        <javac encoding="Windows-1251" debug="true" debuglevel="${debuglevel}" destdir="build/classes"  includeantruntime="false" source="${source}" target="${target}">
+            <src path="src"/>
+            <src path="resources"/>
+            <classpath refid="Tapestry.classpath"/>
+        </javac>
+    </target>
+	
+    <target depends="build-project" name="makewar">
+        <echo message="========== BUILDING WAR =========="/>
+    	<war destfile="build/war/${APP_NAME}.war" webxml="WebContent/WEB-INF/web.xml" update="true">
+	    	<classes dir="build/classes"/>
+	    		
+	    	<fileset dir="WebContent">
+	    		<exclude name="WEB-INF/web.xml"/>
+	    	</fileset>	
+    	</war>
+    </target>
+    <target depends="makewar" name="deploy">
+    	
+        <echo message="========== DEPLOYING =========="/>
+        <wldeploy
+          action="deploy" verbose="true" debug="true"
+          name="${APP_NAME}" source="build/war/${APP_NAME}.war"
+          user="${WEBLOGIC_USERNAME}" password="${WEBLOGIC_PASSWORD}"
+          adminurl="t3://${WEBLOGIC_HOSTNAME}" targets="${WEBLOGIC_SERVERNAME}"
+          upload="true" 
+        />
+    </target>
+
+</project>

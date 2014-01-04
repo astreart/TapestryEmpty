@@ -1,0 +1,12 @@
+<html xmlns:t="http://tapestry.apache.org/schema/tapestry_5_1_0.xsd">
+	<head>
+		<title>Secure Page</title>
+	</head>
+	<body>
+		<h1>Secure Page</h1>
+		<p>Some functionality for secure page goes here.</p>
+		<p>
+			<t:PageLink t:page="Index">Back to the Start page</t:PageLink>
+		</p>
+	</body>
+</html>

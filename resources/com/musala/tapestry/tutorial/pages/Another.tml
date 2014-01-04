@@ -1,0 +1,17 @@
+<html xmlns:t="http://tapestry.apache.org/schema/tapestry_5_1_0.xsd">
+	<head>
+		<title>Another page</title>
+	</head>
+	<body>
+		<h1>Another Page</h1>
+
+		[
+		<t:pagelink t:page="Index">refresh</t:pagelink>
+		]
+		
+		<p>Received a new message: ${passedMessage}</p>
+		
+		<p>User: ${myUser.firstName} ${myUser.lastName}</p>
+
+	</body>
+</html>
