@@ -1,8 +1,16 @@
-package com.musala.tapestry.tutorial.util;
+package com.musala.tapestry.tutorial.model;
 
 public class User {
-	private String firstName = "John";
-	private String lastName = "Smith";
+	private String firstName;
+	private String lastName;
+
+	public User() {
+	}
+
+	public User(String firstName, String lastName) {
+		this.setFirstName(firstName);
+		this.setLastName(lastName);
+	}
 
 	public String getFirstName() {
 		return firstName;

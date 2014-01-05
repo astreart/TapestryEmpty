@@ -3,7 +3,8 @@ package com.musala.tapestry.tutorial.pages;
 import org.apache.tapestry5.annotations.Persist;
 import org.apache.tapestry5.annotations.SessionState;
 
-import com.musala.tapestry.tutorial.util.User;
+import com.musala.tapestry.tutorial.model.User;
+
 
 public class Another {
 	private String passedMessage;

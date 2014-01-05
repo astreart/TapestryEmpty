@@ -5,9 +5,9 @@ import java.util.Date;
 import org.apache.tapestry5.annotations.InjectPage;
 import org.apache.tapestry5.annotations.OnEvent;
 import org.apache.tapestry5.annotations.SessionState;
-import org.apache.tapestry5.ioc.services.ApplicationDefaults;
 
-import com.musala.tapestry.tutorial.util.User;
+import com.musala.tapestry.tutorial.model.User;
+import com.musala.tapestry.tutorial.util.Security;
 
 public class Index {
 	public String getMyProperty() {
@@ -41,7 +41,6 @@ public class Index {
 	}
 
 	public void setMessage(String message) {
-		System.out.println("Setting the message: " + message);
 		this.message = message;
 	}
 
@@ -65,11 +64,43 @@ public class Index {
 		return another;
 	}
 
+	private String userName;
+	private String password;
+
 	@SessionState
 	private User user;
 
 	public User getUser() {
 		return user;
+	}
+
+	Object onSubmitFromLoginForm() {
+		Class nextPage = null;
+		User authenticatedUser = null;
+		authenticatedUser = Security.authenticate(userName, password);
+		if (authenticatedUser != null) {
+			user = authenticatedUser;
+			nextPage = ShowAll.class;
+		} else {
+			nextPage = Registration.class;
+		}
+		return nextPage;
+	}
+
+	public String getUserName() {
+		return userName;
+	}
+
+	public void setUserName(String userName) {
+		this.userName = userName;
+	}
+
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
 	}
 
 	/*

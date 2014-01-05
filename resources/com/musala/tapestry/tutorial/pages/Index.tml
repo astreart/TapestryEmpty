@@ -1,8 +1,48 @@
 <html xmlns:t="http://tapestry.apache.org/schema/tapestry_5_1_0.xsd">
 	<head>
-		<title>t5first Start Page</title>
+		<title>Celebrity Collector</title>
 	</head>
 	<body>
+		<h1>Celebrity Collector</h1>
+		<p> Log in here: </p>
+		<t:form t:id="loginForm">
+			<table>
+				<tr>
+					<td>
+						<t:label t:for="userName">
+							Label for the first text box
+						</t:label>
+						:
+					</td>
+					<td>
+						<input type="text" t:id="userName" t:type="TextField"
+							t:value="userName" />
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<t:label t:for="password">
+							The second label
+						</t:label>
+						:
+					</td>
+					<td>
+						<input type="text" t:id="password" t:type="PasswordField"
+							t:value="password" />
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2" align="center">
+						<input type="submit" value="Log In" />
+					</td>
+				</tr>
+			</table>
+		</t:form>
+		<p>
+			<a href="#" t:type="PageLink" t:page="Registration">
+				Or register</a>
+		</p>
+
 		<h1>Tapestry Start Page</h1>
 		<p> This is the start page for this application, a good place
 			to start
@@ -30,7 +70,8 @@
 		<p>Here is the value : ${someValue}</p>
 
 		<a href="#" t:type="PageLink" t:page="secure/Payment">
-			Go to the secure Payment page test
+			Go to the secure Payment page
+			test
 		</a>
 
 		<br />
@@ -38,8 +79,6 @@
 		<a href="#" t:type="PageLink" t:page="secure/Page">
 			Go to the secure page
 		</a>
-
-		<p>The user is ${user.firstName} ${user.lastName}</p>
 
 		<t:if t:test="userExists">
 			<p>The user is ${user.firstName} ${user.lastName}</p>
