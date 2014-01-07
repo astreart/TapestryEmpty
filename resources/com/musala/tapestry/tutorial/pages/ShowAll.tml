@@ -5,7 +5,22 @@
 	<body>
 		<h1>All existing collections</h1>
 		<p> You successfully logged, that is why you see all collections </p>
-		<a href="#" t:type="PageLink" t:page="Index">
-			Back to the Start Page</a>
+
+		<table width="100%">
+			<tr t:type="loop" t:source="allCelebrities" t:value="celebrity">
+				<td>
+					<a href="#" t:type="ActionLink" t:context="celebrity.id" t:id="detailsLink">${celebrity.lastName}</a>
+				</td>
+				<td>${celebrity.firstName}</td>
+				<td>
+					<t:output t:format="dateFormat" t:value="celebrity.dateOfBirth" />
+				</td>
+				<td>${celebrity.occupation}</td>
+			</tr>
+			</table>
+
+
+			<a href="#" t:type="PageLink" t:page="Index">
+				Back to the Start Page</a>
 	</body>
 </html>

@@ -10,8 +10,6 @@
 		]
 		
 		<p>Received a new message: ${passedMessage}</p>
-		
-		<p>User: ${myUser.firstName} ${myUser.lastName}</p>
 
 	</body>
 </html>
