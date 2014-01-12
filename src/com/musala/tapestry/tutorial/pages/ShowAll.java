@@ -7,6 +7,7 @@ import org.apache.tapestry5.annotations.InjectPage;
 import org.apache.tapestry5.annotations.OnEvent;
 import org.apache.tapestry5.annotations.SessionState;
 
+import com.musala.tapestry.tutorial.data.IDataSource;
 import com.musala.tapestry.tutorial.data.MockDataSource;
 import com.musala.tapestry.tutorial.model.Celebrity;
 import com.musala.tapestry.tutorial.model.User;
@@ -19,10 +20,11 @@ public class ShowAll {
 	private boolean userExists;
 
 	@SessionState
-	private MockDataSource dataSource;
+	//private MockDataSource dataSource;
+	private IDataSource dataSource;
+	private Celebrity celebrity;
 	@InjectPage
 	private Details detailsPage;
-	private Celebrity celebrity;
 
 	String onActivate() {
 		if (!userExists)
@@ -30,12 +32,13 @@ public class ShowAll {
 		return null;
 	}
 
-	@OnEvent(component = "detailsLink")
+	/*@OnEvent(component = "detailsLink")
 	Object onShowDetails(long id) {
 		Celebrity celebrity = dataSource.getCelebrityById(id);
 		detailsPage.setCelebrity(celebrity);
 		return detailsPage;
-	}
+	}*/
+	
 
 	public List<Celebrity> getAllCelebrities() {
 		return dataSource.getAllCelebrities();

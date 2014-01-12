@@ -9,7 +9,7 @@
 		<table width="100%">
 			<tr t:type="loop" t:source="allCelebrities" t:value="celebrity">
 				<td>
-					<a href="#" t:type="ActionLink" t:context="celebrity.id" t:id="detailsLink">${celebrity.lastName}</a>
+					<a href="#" t:type="PageLink" t:page="Details" t:context="celebrity.id" >${celebrity.lastName}</a>
 				</td>
 				<td>${celebrity.firstName}</td>
 				<td>
