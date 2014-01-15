@@ -68,6 +68,7 @@ public class Registration {
 		email = null;
 		gender = null;
 		subscribe = false;
+		this.country=null;
 	}
 	
 	public SelectModel getCountries() {
@@ -75,10 +76,12 @@ public class Registration {
 	}
 	
 	public Country getCountry() {
+		System.out.println("Selected country is: " + country);
 		return country;
 	}
 
 	public void setCountry(Country country) {
+		System.out.println("Set country is: " + country);
 		this.country = country;
 	}
 

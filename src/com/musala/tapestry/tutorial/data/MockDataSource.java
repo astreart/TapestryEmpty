@@ -59,4 +59,13 @@ public class MockDataSource implements IDataSource {
 		c.setId(newId);
 		celebrities.add(c);
 	}
+
+	@Override
+	public List<Celebrity> getRange(int indexFrom, int indexTo) {
+		List<Celebrity> result = new ArrayList<Celebrity>();
+		for(int i = indexFrom ; i<= indexTo; i++){
+			result.add(celebrities.get(i));
+		}
+		return result;
+	}
 }

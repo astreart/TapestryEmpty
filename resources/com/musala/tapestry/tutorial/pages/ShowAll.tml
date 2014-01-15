@@ -6,21 +6,25 @@
 		<h1>All existing collections</h1>
 		<p> You successfully logged, that is why you see all collections </p>
 
-		<table width="100%">
-			<tr t:type="loop" t:source="allCelebrities" t:value="celebrity">
-				<td>
-					<a href="#" t:type="PageLink" t:page="Details" t:context="celebrity.id" >${celebrity.lastName}</a>
-				</td>
-				<td>${celebrity.firstName}</td>
-				<td>
-					<t:output t:format="dateFormat" t:value="celebrity.dateOfBirth" />
-				</td>
-				<td>${celebrity.occupation}</td>
-			</tr>
-			</table>
+		<!-- <table width="100%"> <tr t:type="loop" t:source="allCelebrities" t:value="celebrity"> 
+			<td> <a href="#" t:type="PageLink" t:page="Details" t:context="celebrity.id" 
+			>${celebrity.lastName}</a> </td> <td>${celebrity.firstName}</td> <td> <t:output 
+			t:format="dateFormat" t:value="celebrity.dateOfBirth" /> </td> <td>${celebrity.occupation}</td> 
+			</tr> </table> -->
+
+		
+		<t:grid t:source="allCelebrities" rowsPerPage="10" row="celebrity" 
+			remove="id" reorder="lastName,firstName,occupation,dateOfBirth">
+			<t:parameter name="lastNameCell">
+				<t:pagelink t:page="details" t:context="celebrity.id">
+					${celebrity.lastName}
+				</t:pagelink>
+			</t:parameter>
+		</t:grid>
+		
 
 
-			<a href="#" t:type="PageLink" t:page="Index">
-				Back to the Start Page</a>
+		<a href="#" t:type="PageLink" t:page="Index">
+			Back to the Start Page</a>
 	</body>
 </html>

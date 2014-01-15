@@ -35,12 +35,12 @@ public class ControlAppModule {
 
 	}
 
-	@Contribute(BeanBlockOverrideSource.class)
+	/*@Contribute(BeanBlockOverrideSource.class)
 	public static void overridePropertyBlocks(
 			Configuration<BeanBlockContribution> configuration) {
 		configuration.add(new DisplayBlockContribution("date",
 				"system/AppPropertyDisplayBlocks", "dateBlock"));
-	}
+	}*/
 
 	public void contributeApplicationStateManager(
 			MappedConfiguration<Class, ApplicationStateContribution> configuration) {

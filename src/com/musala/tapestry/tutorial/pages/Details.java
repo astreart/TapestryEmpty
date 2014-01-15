@@ -12,8 +12,6 @@ import com.musala.tapestry.tutorial.util.Formats;
 
 public class Details {
 
-	// @Persist
-	// private Celebrity celebrity;
 
 	@SessionState
 	private IDataSource dataSource;

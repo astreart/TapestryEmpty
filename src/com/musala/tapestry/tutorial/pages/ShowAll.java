@@ -20,7 +20,7 @@ public class ShowAll {
 	private boolean userExists;
 
 	@SessionState
-	//private MockDataSource dataSource;
+	// private MockDataSource dataSource;
 	private IDataSource dataSource;
 	private Celebrity celebrity;
 	@InjectPage
@@ -32,15 +32,14 @@ public class ShowAll {
 		return null;
 	}
 
-	/*@OnEvent(component = "detailsLink")
-	Object onShowDetails(long id) {
-		Celebrity celebrity = dataSource.getCelebrityById(id);
-		detailsPage.setCelebrity(celebrity);
-		return detailsPage;
-	}*/
-	
+	/*
+	 * @OnEvent(component = "detailsLink") Object onShowDetails(long id) {
+	 * Celebrity celebrity = dataSource.getCelebrityById(id);
+	 * detailsPage.setCelebrity(celebrity); return detailsPage; }
+	 */
 
 	public List<Celebrity> getAllCelebrities() {
+		System.out.println("Getting all celebrities...");
 		return dataSource.getAllCelebrities();
 	}
 
