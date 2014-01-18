@@ -25,7 +25,7 @@ public class ControlAppModule {
 	public static void contributeApplicationDefaults(
 			MappedConfiguration<String, String> configuration) {
 		configuration.add(SymbolConstants.MINIFICATION_ENABLED, "false");
-		configuration.add(SymbolConstants.CHARSET, "windows-1251");
+		//configuration.add(SymbolConstants.CHARSET, "windows-1251");
 		configuration.add(SymbolConstants.HMAC_PASSPHRASE, new BigInteger(130,
 				new SecureRandom()).toString(32));
 		configuration.add(SymbolConstants.PRODUCTION_MODE, "false");

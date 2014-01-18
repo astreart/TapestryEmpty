@@ -1,0 +1,13 @@
+<html xmlns:t="http://tapestry.apache.org/schema/tapestry_5_0_0.xsd">
+	<head>
+		<title>Celebrity Collector: Adding New
+			Celebrity</title>
+	</head>
+	<body>
+		<h1>Adding New Celebrity</h1>
+		<t:beaneditform t:id="celebrityEditor" t:object="celebrity"
+			t:exclude="id"
+			reorder="firstName,lastName,dateOfBirth,birthDateVerified,
+occupation,biography" />
+	</body>
+</html>

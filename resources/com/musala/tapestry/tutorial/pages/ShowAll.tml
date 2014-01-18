@@ -3,27 +3,19 @@
 		<title>Celebrity Collector: ShowAll</title>
 	</head>
 	<body>
-		<h1>All existing collections</h1>
-		<p> You successfully logged, that is why you see all collections </p>
+		<h1>All Celebrities in Collection</h1>
 
-		<!-- <table width="100%"> <tr t:type="loop" t:source="allCelebrities" t:value="celebrity"> 
-			<td> <a href="#" t:type="PageLink" t:page="Details" t:context="celebrity.id" 
-			>${celebrity.lastName}</a> </td> <td>${celebrity.firstName}</td> <td> <t:output 
-			t:format="dateFormat" t:value="celebrity.dateOfBirth" /> </td> <td>${celebrity.occupation}</td> 
-			</tr> </table> -->
-
-		
-		<t:grid t:source="allCelebrities" rowsPerPage="10" row="celebrity" 
-			remove="id" reorder="lastName,firstName,occupation,dateOfBirth">
+		<t:grid t:source="celebritySource" rowsPerPage="5" row="celebrity">
+			<!--  remove="id, biography, birthDateVerified" reorder="lastName,firstName,occupation,dateOfBirth">-->
 			<t:parameter name="lastNameCell">
 				<t:pagelink t:page="details" t:context="celebrity.id">
 					${celebrity.lastName}
 				</t:pagelink>
 			</t:parameter>
 		</t:grid>
-		
-
-
+		<br />
+		<a href="#" t:type="PageLink" t:page="AddCelebrity">Add new Celebrity</a>
+		<br />
 		<a href="#" t:type="PageLink" t:page="Index">
 			Back to the Start Page</a>
 	</body>
