@@ -1,5 +1,7 @@
 package com.musala.tapestry.tutorial.pages;
 
+import java.util.Date;
+
 import org.apache.tapestry5.SelectModel;
 import org.apache.tapestry5.annotations.OnEvent;
 import org.apache.tapestry5.annotations.Persist;
@@ -12,12 +14,11 @@ import com.musala.tapestry.tutorial.model.Country;
 import com.musala.tapestry.tutorial.model.Gender;
 import com.musala.tapestry.tutorial.model.User;
 
-
 public class Registration {
 
 	@SessionState
 	private User user;
-	
+
 	@Inject
 	private Messages messages;
 
@@ -37,7 +38,7 @@ public class Registration {
 
 	@Persist
 	private String email;
-	
+
 	@Persist
 	private Country country;
 
@@ -52,7 +53,7 @@ public class Registration {
 		return nextPage;
 	}
 
-	//@OnEvent(component="submitButton")
+	// @OnEvent(component="submitButton")
 	void onSelectedFromSubmitButton() {
 		System.out.println("Submit button was pressed!");
 		User newUser = new User("John", "Johnson");
@@ -60,21 +61,21 @@ public class Registration {
 		nextPage = ShowAll.class;
 	}
 
-	//@OnEvent(component="resetButton")
-	void onSelectedFromResetButton() { 
+	// @OnEvent(component="resetButton")
+	void onSelectedFromResetButton() {
 		System.out.println("Resetting...");
 		userName = null;
 		password = null;
 		email = null;
 		gender = null;
 		subscribe = false;
-		this.country=null;
+		this.country = null;
 	}
-	
+
 	public SelectModel getCountries() {
 		return new EnumSelectModel(Country.class, messages);
 	}
-	
+
 	public Country getCountry() {
 		System.out.println("Selected country is: " + country);
 		return country;
@@ -154,5 +155,16 @@ public class Registration {
 
 	public void setGender(Gender gender) {
 		this.gender = gender;
+	}
+
+	@Persist
+	private Date dateOfBirth;
+
+	public Date getDateOfBirth() {
+		return dateOfBirth;
+	}
+
+	public void setDateOfBirth(Date dateOfBirth) {
+		this.dateOfBirth = dateOfBirth;
 	}
 }

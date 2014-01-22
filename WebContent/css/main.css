@@ -1,56 +1,56 @@
-.container, .navbar-static-top .container, .navbar-fixed-top .container, .navbar-fixed-bottom .container {
+.container,.navbar-static-top .container,.navbar-fixed-top .container,.navbar-fixed-bottom .container
+	{
 	width: 1180px;
 }
 
-HTML,
-BODY{
+HTML,BODY {
 	height: 100%;
 }
 
-.container{
+.container {
 	min-height: 100%;
-    height: auto !important;
-    height: 100%;
-    margin: 0 auto -30px;
+	height: auto !important;
+	height: 100%;
+	margin: 0 auto -30px;
 }
 
-H1{
+H1 {
 	font-size: 28px;
 }
 
-H2{
+H2 {
 	font-size: 22px;
 }
 
-H3{
+H3 {
 	font-size: 16px;
 }
 
-H4{
+H4 {
 	font-size: 14px;
 }
 
-H5{
+H5 {
 	font-size: 12px;
 }
 
-H6{
+H6 {
 	font-size: 11px;
 }
 
-body{
+body {
 	margin: 0;
-	padding:0;
+	padding: 0;
 }
 
-#header{
+#header {
 	background-color: #d9edf7;
 	background-image: url('../img/logo.png');
 	background-repeat: no-repeat;
 	height: 120px;
 }
 
-#header H1{
+#header H1 {
 	font-size: 22px;
 	margin-top: 80px;
 	text-align: center;
@@ -61,27 +61,26 @@ body{
 	float: left;
 }
 
-#main{
-	overflow: hidden;   
+#main {
+	overflow: hidden;
 }
 
-#left{
+#left {
 	margin-bottom: -99999px;
 	padding-bottom: 99999px;
 	min-height: 300px;
-
 }
 
-#content{
+#content {
 	
 }
 
-#personal{
+#personal {
 	float: right;
 	margin-right: 10px;
 }
 
-#messaging{
+#messaging {
 	clear: right;
 	float: right;
 	margin-right: 10px;
@@ -90,74 +89,69 @@ body{
 	text-align: left;
 }
 
-#breadcrumb{
+#breadcrumb {
 	height: 30px;
 	padding-left: 10px;
 }
 
-
-#push,
-#footer {
-    height: 29px;
+#push,#footer {
+	height: 29px;
 	font-weight: bold;
-	
 }
 
-#footer{
+#footer {
 	text-align: center;
 	border-top: 1px solid #ddd;
-	
 }
 
-#footer DIV{
+#footer DIV {
 	font-size: 10px;
 }
 
-.navbar UL LI{
+.navbar UL LI {
 	position: relative;
 }
 
 /*------------------ TABLES --------------------------*/
-.table TH{
+.table TH {
 	text-align: center;
 	background-color: #eee;
 }
 
-.table .category{
+.table .category {
 	font-weight: bold;
 	background-color: #eff;
 }
 
-.table .subcategory{
+.table .subcategory {
 	font-weight: bold;
 	background-color: #f0f3f8;
 	padding-left: 30px;
 }
 
-.table .subcategory2{
+.table .subcategory2 {
 	padding-left: 60px;
 }
 
-th.disabled, th.disabled:hover,
-td.disabled, td.disabled:hover {
+th.disabled,th.disabled:hover,td.disabled,td.disabled:hover {
 	background-color: #cccccc !important;
 }
 
 /*------------------ FORMS --------------------------*/
-.form-horizontal .control-group{
+.form-horizontal .control-group {
 	margin-bottom: 5px;
 }
 
-.datepicker{
-	padding:0;
+.datepicker {
+	padding: 0;
 }
 
 /* ------ ACTION CONTROLS ----------- */
-.action-buttons .buttons{
+.action-buttons .buttons {
 	text-align: right;
 }
 
-.action-buttons .buttons .btn{
+.action-buttons .buttons .btn {
 	margin-left: 5px;
 }
 
@@ -167,7 +161,7 @@ td.disabled, td.disabled:hover {
 }
 
 /* ----------------- MODAL DIALOGS -------------------------*/
-.modal{
+.modal {
 	width: 800px;
 	margin-left: -400px;
 }
@@ -187,7 +181,8 @@ td.disabled, td.disabled:hover {
 	text-align: right;
 }
 
-.modal .horizontal-controls .controls, .modal .horizontal-controls .controls-text {
+.modal .horizontal-controls .controls,.modal .horizontal-controls .controls-text
+	{
 	margin-left: 130px;
 }
 
@@ -195,54 +190,51 @@ td.disabled, td.disabled:hover {
 	margin-top: 5px;
 }
 
-.modal-body .controls INPUT,
-.modal-body .controls SELECT,
-.modal-body .controls .input-append,
-.modal-body .controls .input-prepend {
+.modal-body .controls INPUT,.modal-body .controls SELECT,.modal-body .controls .input-append,.modal-body .controls .input-prepend
+	{
 	margin-bottom: 0px;
 }
 
 /*--------- CUSTOM COMPONENTS --------- */
 
 /*-------------CUSTOM COLLAPSABLE SECTION ----- */
-fieldset,
-fieldset.collapsible {
-    border-top: 1px solid #D5D8D8;
+fieldset,fieldset.collapsible {
+	border-top: 1px solid #D5D8D8;
 	margin-bottom: 10px;
 }
 
-fieldset > legend,
-fieldset.collapsible > legend {
+fieldset>legend,fieldset.collapsible>legend {
 	font-size: 14px;
 	font-weight: bold;
-    margin-left: 60px;
+	margin-left: 60px;
 	margin-bottom: 0px;
 	border-bottom: none;
 	padding: 0 10px;
 	width: auto;
-
-}
-fieldset.collapsible > legend {
-	cursor:pointer
 }
 
-fieldset.collapsible > div {
-    display: none;
+fieldset.collapsible>legend {
+	cursor: pointer
+}
+
+fieldset.collapsible>div {
+	display: none;
 }
 
 /* ---------- MUSALA FILTERS --------*/
-.msl-filters .btn-group,
-.msl-filters .control-group{
+.msl-filters .btn-group,.msl-filters .control-group {
 	margin-bottom: 5px;
 }
-.msl-filters label{
-	float:left;
+
+.msl-filters label {
+	float: left;
 	padding-top: 7px;
 	margin-right: 5px;
 	width: 80px;
 }
 
-.msl-filters .select2-container, .msl-filters .input-append, .msl-filters .input-prepend {
+.msl-filters .select2-container,.msl-filters .input-append,.msl-filters .input-prepend
+	{
 	margin-bottom: 0px;
 }
 
@@ -258,15 +250,15 @@ fieldset.collapsible > div {
 	width: 80px;
 }
 
-.span6.msl-filters input, .span6.msl-filters .select2-container {
+.span6.msl-filters input,.span6.msl-filters .select2-container {
 	width: 465px;
 }
 
-.msl-filters SELECT, .msl-filters INPUT{
+.msl-filters SELECT,.msl-filters INPUT {
 	margin-bottom: 0;
 }
 
-.msl-filters .checkbox{
+.msl-filters .checkbox {
 	width: auto;
 }
 
@@ -279,47 +271,46 @@ fieldset.collapsible > div {
 .comment .comment-info {
 	margin-left: 10px;
 	color: #666 !important;
-	font-style:italic;
+	font-style: italic;
 }
 
 /* ---------- MUSALA BLOCKS --------*/
-.msl-block-container{
+.msl-block-container {
 	overflow: hidden;
 }
 
-.msl-block{
+.msl-block {
 	-webkit-border-radius: 4px;
-	-moz-border-radius: 4px
-	border-radius: 4px;
+	-moz-border-radius: 4px border-radius:    4px;
 	background-color: #f7f7f9;
 	padding: 10px;
 	margin-bottom: -99999px;
 	padding-bottom: 99999px;
 }
-.msl-block .title{
+
+.msl-block .title {
 	border-bottom: 1px solid #3a87ad;
 	color: #3a87ad;
 	font-weight: bold;
 	font-size: 14px;
-	
 }
 
-.msl-block .details{
-	text-align:center;
+.msl-block .details {
+	text-align: center;
 	margin: 10px;
 }
-.msl-block-warning{
+
+.msl-block-warning {
 	background-color: #fcf8e3;
 }
 
-.msl-block-info{
+.msl-block-info {
 	background-color: #d9edf7;
 }
 
 .msl-block-success {
 	background-color: #51a351;
 }
-
 
 /* ---------- MUSALA NOTIFICATION ICONS --------*/
 .msl-background-error {
@@ -338,10 +329,9 @@ fieldset.collapsible > div {
 	background-color: #468847;
 }
 
-
 /* --------------- FORM SECTIONS ---------------*/
-.section{
-/*	overflow:hidden; */
+.section {
+	/*	overflow:hidden; */
 	background-color: #e8ecf5;
 	border-radius: 5px;
 	-moz-border-radius: 5px;
@@ -349,113 +339,106 @@ fieldset.collapsible > div {
 	margin-bottom: 10px;
 }
 
-.section .section-title{
+.section .section-title {
 	border-bottom: 1px solid #e0e1e3;
-	
 	padding-left: 10px;
 	padding-right: 20px;
 	padding-top: 10px;
 	padding-bottom: 10px;
-	
 	color: #6d7174;
 	font-size: 14px;
 	font-weight: bold;
 	line-height: 30px;
 }
 
-.no-border{
+.no-border {
 	border: 0px !important;
 }
 
-.section .section-title a{
+.section .section-title a {
 	color: #6d7174;
 	font-size: 14px;
 }
 
-.section .section-title .section-action{
+.section .section-title .section-action {
 	float: right;
 	margin-left: 10px;
 }
 
-.section .subsection{
+.section .subsection {
 	padding-top: 10px;
 }
 
-.section .subsection-colored{
+.section .subsection-colored {
 	background-color: #f0f3f8;
 }
 
-.section .control-group, 
-.section .table{
+.section .control-group,.section .table {
 	padding-left: 10px;
 	padding-right: 30px;
 }
 
-.section .control-group .controls INPUT,
-.section .control-group .controls SELECT,
-.section .control-group .controls TEXTAREA
-{
+.section .control-group .controls INPUT,.section .control-group .controls SELECT,.section .control-group .controls TEXTAREA
+	{
 	width: 100%;
 }
 
-
-
-.control-group .controls TEXTAREA{
+.control-group .controls TEXTAREA {
 	height: 45px;
 }
 
-.control-group .controls TEXTAREA.textarea-large{
+.control-group .controls TEXTAREA.textarea-large {
 	height: 90px;
 }
 
-.control-group .controls TEXTAREA.textarea-xlarge{
+.control-group .controls TEXTAREA.textarea-xlarge {
 	height: 180px;
 }
 
-.lp-identifier{
+.lp-identifier {
 	clear: both;
-	overflow:hidden;
+	overflow: hidden;
 }
-.lp-identifier .input-append,
-.lp-identifier SELECT{
+
+.lp-identifier .input-append,.lp-identifier SELECT {
 	float: left;
 	margin-right: 10px;
 }
 
-.section .table{
+.section .table {
 	
 }
-.section .table TH{
+
+.section .table TH {
 	background-color: #f0f3f8;
 	text-align: left;
 }
 
-.section .table TD{
+.section .table TD {
 	background-color: #ffffff;
 }
 
-.section .table .table-actions{
+.section .table .table-actions {
 	width: 1%;
 }
 
 /* --------------- OVERRIDEN BOOTSTRAP ---------------*/
-.dropdown-menu > li > a {
+.dropdown-menu>li>a {
 	font-size: 12px;
 	line-height: 16px;
 }
 
-.ts-radio, .ts-checkbox {
+.ts-radio,.ts-checkbox {
 	min-height: 20px;
 	padding-left: 5px;
 	padding-right: 20px;
 }
 
-.ts-radio.inline, .ts-checkbox.inline {
+.ts-radio.inline,.ts-checkbox.inline {
 	display: inline-block;
 	padding-top: 5px;
 	margin-bottom: 0;
 	vertical-align: middle;
-
 }
 
 .popover {

@@ -56,6 +56,14 @@
 						</t:radiogroup>
 					</td>
 				</tr>
+
+				<tr>
+					<td>Birth Date:</td>
+					<td>
+						<input type="text" t:type="datefield" t:value="dateOfBirth" t:format="%d/%m/%y"/>
+					</td>
+				</tr>
+
 				<tr>
 					<t:if t:test="subscribe">
 						<td>

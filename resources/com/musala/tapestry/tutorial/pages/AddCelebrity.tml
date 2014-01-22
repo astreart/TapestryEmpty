@@ -2,12 +2,19 @@
 	<head>
 		<title>Celebrity Collector: Adding New
 			Celebrity</title>
+		<link rel="stylesheet" href="${styles}" type="text/css"/>
 	</head>
 	<body>
 		<h1>Adding New Celebrity</h1>
 		<t:beaneditform t:id="celebrityEditor" t:object="celebrity"
 			t:exclude="id"
 			reorder="firstName,lastName,dateOfBirth,birthDateVerified,
-occupation,biography" />
+occupation,biography">
+			<t:parameter name="biography">
+				<t:label for="biography" />
+				<t:textarea t:id="biography" t:value="celebrity.biography"
+					cols="30" rows="5" />
+			</t:parameter>
+		</t:beaneditform>
 	</body>
 </html>
