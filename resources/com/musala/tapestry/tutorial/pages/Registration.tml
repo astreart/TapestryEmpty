@@ -6,6 +6,7 @@
 		<h1>Registration</h1>
 
 		<t:form t:id="registrationForm">
+			<t:errors />
 			<table>
 				<tr>
 					<td>
@@ -16,7 +17,7 @@
 					</td>
 					<td>
 						<input type="text" t:type="textfield" t:id="userName"
-							t:value="userName" />
+							t:value="userName" t:validate="required,minlength=3,maxlength=8" />
 					</td>
 				</tr>
 				<t:if t:test="passwordNotSubmitted">
@@ -29,7 +30,7 @@
 						</td>
 						<td>
 							<input type="text" t:type="passwordfield" t:id="password"
-								t:value="password" />
+								t:value="password" t:validate="required,minlength=3,maxlength=8" />
 						</td>
 					</tr>
 					<tr>
@@ -60,7 +61,18 @@
 				<tr>
 					<td>Birth Date:</td>
 					<td>
-						<input type="text" t:type="datefield" t:value="dateOfBirth" t:format="%d/%m/%y"/>
+						<input type="text" t:type="datefield" t:value="dateOfBirth"
+							t:format="%d/%m/%y" />
+					</td>
+				</tr>
+
+				<tr>
+					<td>
+						<t:label t:for="age" />
+					</td>
+					<td>
+						<input type="text" t:type="textfield" t:id="age"
+							t:validate="required,min=5,max=120" />
 					</td>
 				</tr>
 
@@ -70,7 +82,7 @@
 							<t:label t:for="email" />
 						</td>
 						<td>
-							<input type="text" t:type="textfield" t:id="email" t:value="email" />
+							<input type="text" t:type="textfield" t:id="email" t:value="email" t:validate="regexp" />
 							<input type="checkbox" t:type="checkbox" t:value="unsubscribe"
 								onclick="this.form.submit()" />
 							I don't want to subscribe

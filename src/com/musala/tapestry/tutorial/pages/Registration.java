@@ -44,14 +44,35 @@ public class Registration {
 
 	private boolean unsubscribe;
 
+	@Persist
+	private double age;
+
 	private Class nextPage;
 
-	Object onSubmitFromRegistrationForm() {
+	void onSubmit() {
 		System.out.println("The form was submitted!");
+	}
+
+	void onValidate() {
+		System.out.println("In onValidate.");
+	}
+
+	Object onSuccess() {
+		System.out.println("In onSuccess.");
 		if (unsubscribe)
 			subscribe = false;
 		return nextPage;
 	}
+
+	void onFailure() {
+		System.out.println("In onFailure.");
+	}
+
+	/*
+	 * Object onSubmitFromRegistrationForm() {
+	 * System.out.println("The form was submitted!"); if (unsubscribe) subscribe
+	 * = false; return nextPage; }
+	 */
 
 	// @OnEvent(component="submitButton")
 	void onSelectedFromSubmitButton() {
@@ -166,5 +187,13 @@ public class Registration {
 
 	public void setDateOfBirth(Date dateOfBirth) {
 		this.dateOfBirth = dateOfBirth;
+	}
+
+	public double getAge() {
+		return age;
+	}
+
+	public void setAge(double age) {
+		this.age = age;
 	}
 }
