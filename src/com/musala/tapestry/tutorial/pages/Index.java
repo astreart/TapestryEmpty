@@ -1,6 +1,7 @@
 package com.musala.tapestry.tutorial.pages;
 
 import java.util.Date;
+import java.util.Locale;
 
 import org.apache.tapestry5.annotations.Component;
 import org.apache.tapestry5.annotations.InjectPage;
@@ -9,11 +10,28 @@ import org.apache.tapestry5.annotations.SessionState;
 import org.apache.tapestry5.corelib.components.Form;
 import org.apache.tapestry5.ioc.Messages;
 import org.apache.tapestry5.ioc.annotations.Inject;
+import org.apache.tapestry5.services.PersistentLocale;
 
 import com.musala.tapestry.tutorial.model.User;
 import com.musala.tapestry.tutorial.util.Security;
 
 public class Index {
+
+	@Inject
+	private Locale currentLocale;
+
+	@Inject
+	private PersistentLocale persistentLocale;
+
+	@OnEvent(component = "switchlocale")
+	void changeLocale() {
+		if (currentLocale.equals(Locale.GERMAN)) {
+			persistentLocale.set(Locale.ENGLISH);
+		} else {
+			persistentLocale.set(Locale.GERMAN);
+		}
+	}
+
 	public String getMyProperty() {
 		return "property from backend";
 	}
@@ -131,4 +149,10 @@ public class Index {
 		return userExists;
 	}
 
+	@Inject
+	private Messages messages;
+
+	public String getOrRegisterLabel() {
+		return messages.get("or-register");
+	}
 }

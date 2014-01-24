@@ -1,47 +1,55 @@
 <html xmlns:t="http://tapestry.apache.org/schema/tapestry_5_1_0.xsd">
 	<head>
-		<title>Celebrity Collector</title>
+		<title>${message:celebrity-collector}</title>
 	</head>
 	<body>
-		<h1>Celebrity Collector</h1>
-		<p> Log in here: </p>
-		<t:form t:id="loginForm">
+
+		<p align="right">
+			<t:actionlink t:id="switchlocale">
+				Switch Locale
+			</t:actionlink>
+		</p>
 		
+		<h1>${message:celebrity-collector}</h1>
+		<p> ${message:login-here}: </p>
+		<t:form t:id="loginForm">
+
 			<table>
 				<tr>
 					<td>
 						<t:label t:for="userName">
-							Label for the first text box
+							${message:user-name}
 						</t:label>
 						:
 					</td>
 					<td>
 						<input type="text" t:id="userName" t:type="TextField"
-							t:value="userName" t:validate="required"/>
+							t:value="userName" t:validate="required" t:label="message:user-name" />
 					</td>
 				</tr>
 				<tr>
 					<td>
 						<t:label t:for="password">
-							The second label
+							${message:Password}
 						</t:label>
 						:
 					</td>
 					<td>
 						<input type="text" t:id="password" t:type="PasswordField"
-							t:value="password" t:validate="required"/>
+							t:value="password" t:validate="required" t:label="message:Password" />
 					</td>
 				</tr>
 				<tr>
-					<td colspan="2" align="center">
-						<input type="submit" value="Log In" />
+					<td colspan="2" align="left">
+						<input type="submit" value="${message:log-in}" />
 					</td>
 				</tr>
 			</table>
 		</t:form>
+
 		<p>
 			<a href="#" t:type="PageLink" t:page="Registration">
-				Or register</a>
+				${orRegisterLabel}</a>
 		</p>
 
 		<h1>Tapestry Start Page</h1>

@@ -29,6 +29,7 @@ public class ControlAppModule {
 		configuration.add(SymbolConstants.HMAC_PASSPHRASE, new BigInteger(130,
 				new SecureRandom()).toString(32));
 		configuration.add(SymbolConstants.PRODUCTION_MODE, "false");
+		//configuration.add("tapestry.supported-locales", "en,de");
 	}
 
 	public static void bind(ServiceBinder binder) {
