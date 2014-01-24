@@ -1,11 +1,14 @@
 package com.musala.tapestry.tutorial.pages;
 
+import java.io.IOException;
 import java.util.Date;
 
 import org.apache.tapestry5.SelectModel;
-import org.apache.tapestry5.annotations.OnEvent;
+import org.apache.tapestry5.annotations.Component;
 import org.apache.tapestry5.annotations.Persist;
 import org.apache.tapestry5.annotations.SessionState;
+import org.apache.tapestry5.corelib.components.Form;
+import org.apache.tapestry5.corelib.components.PasswordField;
 import org.apache.tapestry5.ioc.Messages;
 import org.apache.tapestry5.ioc.annotations.Inject;
 import org.apache.tapestry5.util.EnumSelectModel;
@@ -15,6 +18,12 @@ import com.musala.tapestry.tutorial.model.Gender;
 import com.musala.tapestry.tutorial.model.User;
 
 public class Registration {
+
+	@Component
+	private Form registrationForm;
+
+	@Component(id = "password")
+	private PasswordField passwordField;
 
 	@SessionState
 	private User user;
@@ -49,13 +58,21 @@ public class Registration {
 
 	private Class nextPage;
 
+	// void onSubmitFromRegistrationForm(){
 	void onSubmit() {
 		System.out.println("The form was submitted!");
 	}
 
-	void onValidate() {
+	void onValidateFromRegistrationForm() {
 		System.out.println("In onValidate.");
-	}
+			//if (!password.equals(password2)) {
+				/*
+				 * password = null; registrationForm.recordError(passwordField,
+				 * messages.get("passwords-dont-match"));
+				 */
+			//}
+		}
+	
 
 	Object onSuccess() {
 		System.out.println("In onSuccess.");

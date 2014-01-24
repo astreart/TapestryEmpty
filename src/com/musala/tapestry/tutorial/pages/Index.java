@@ -2,9 +2,13 @@ package com.musala.tapestry.tutorial.pages;
 
 import java.util.Date;
 
+import org.apache.tapestry5.annotations.Component;
 import org.apache.tapestry5.annotations.InjectPage;
 import org.apache.tapestry5.annotations.OnEvent;
 import org.apache.tapestry5.annotations.SessionState;
+import org.apache.tapestry5.corelib.components.Form;
+import org.apache.tapestry5.ioc.Messages;
+import org.apache.tapestry5.ioc.annotations.Inject;
 
 import com.musala.tapestry.tutorial.model.User;
 import com.musala.tapestry.tutorial.util.Security;
@@ -86,6 +90,19 @@ public class Index {
 		}
 		return nextPage;
 	}
+
+	/*
+	 * @Component private Form loginForm;
+	 * 
+	 * @Inject private Messages messages;
+	 * 
+	 * Object onSuccessFromLoginForm() { return ShowAll.class; }
+	 * 
+	 * void onValidateFromLoginForm() { User authenticatedUser =
+	 * Security.authenticate(userName, password); if (authenticatedUser != null)
+	 * { user = authenticatedUser; } else {
+	 * loginForm.recordError(messages.get("authentication-failed")); } }
+	 */
 
 	public String getUserName() {
 		return userName;
