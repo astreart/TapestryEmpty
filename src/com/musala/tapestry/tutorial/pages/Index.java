@@ -3,9 +3,12 @@ package com.musala.tapestry.tutorial.pages;
 import java.util.Date;
 import java.util.Locale;
 
+import org.apache.tapestry5.Asset;
 import org.apache.tapestry5.annotations.Component;
 import org.apache.tapestry5.annotations.InjectPage;
 import org.apache.tapestry5.annotations.OnEvent;
+import org.apache.tapestry5.annotations.Path;
+import org.apache.tapestry5.annotations.Persist;
 import org.apache.tapestry5.annotations.SessionState;
 import org.apache.tapestry5.corelib.components.Form;
 import org.apache.tapestry5.ioc.Messages;
@@ -23,13 +26,36 @@ public class Index {
 	@Inject
 	private PersistentLocale persistentLocale;
 
+	@Persist
+	private String localeLabel;
+
+	public String getLocaleLabel() {
+		if (localeLabel == null) {
+			if (currentLocale.equals(Locale.GERMAN)) {
+				localeLabel = new Locale("en").getDisplayName(Locale.ENGLISH);
+			} else {
+				localeLabel = new Locale("de").getDisplayName(Locale.GERMAN);
+			}
+		}
+		return localeLabel;
+	}
+
 	@OnEvent(component = "switchlocale")
 	void changeLocale() {
+		localeLabel = currentLocale.getDisplayName(currentLocale);
 		if (currentLocale.equals(Locale.GERMAN)) {
 			persistentLocale.set(Locale.ENGLISH);
 		} else {
 			persistentLocale.set(Locale.GERMAN);
 		}
+	}
+
+	@Inject
+	@Path("context:/img/flag.gif")
+	private Asset flag;
+
+	public Asset getFlag() {
+		return flag;
 	}
 
 	public String getMyProperty() {

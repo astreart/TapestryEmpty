@@ -5,9 +5,14 @@
 	<body>
 
 		<p align="right">
+			<img src="${flag}" />
 			<t:actionlink t:id="switchlocale">
-				Switch Locale
+				${localeLabel}
 			</t:actionlink>
+		</p>
+
+		<p>
+			<t:pagelink t:page="terms">Terms and Conditions</t:pagelink>
 		</p>
 		
 		<h1>${message:celebrity-collector}</h1>
