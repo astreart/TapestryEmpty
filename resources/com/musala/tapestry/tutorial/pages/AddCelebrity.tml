@@ -1,25 +1,14 @@
-<html xmlns:t="http://tapestry.apache.org/schema/tapestry_5_0_0.xsd">
-	<head>
-		<title>Celebrity Collector: Adding New
-			Celebrity</title>
-		<link rel="stylesheet" href="${styles}" type="text/css" />
-		<script src="//tinymce.cachefly.net/4.0/tinymce.min.js"></script>
-		<script>
-			tinymce.init({selector:'textarea'});
-		</script>
-
-	</head>
-	<body>
-		<h1>Adding New Celebrity</h1>
-		<t:beaneditform t:id="celebrityEditor" t:object="celebrity"
-			t:exclude="id"
-			reorder="firstName,lastName,dateOfBirth,birthDateVerified,
+<t:border t:pageTitle="Add New Celebrity"
+	xmlns:t="http://tapestry.apache.org/schema/tapestry_5_1_0.xsd">
+	<h1>Adding New Celebrity</h1>
+	<t:beaneditform t:id="celebrityEditor" t:object="celebrity"
+		t:exclude="id"
+		reorder="firstName,lastName,dateOfBirth,birthDateVerified,
 occupation,biography">
-			<t:parameter name="biography">
-				<t:label for="biography" />
-				<t:textarea t:id="biography" t:value="celebrity.biography"
-					cols="30" rows="5" />
-			</t:parameter>
-		</t:beaneditform>
-	</body>
-</html>
+		<t:parameter name="biography">
+			<t:label for="biography" />
+			<t:textarea t:id="biography" t:value="celebrity.biography"
+				cols="30" rows="5" />
+		</t:parameter>
+	</t:beaneditform>
+</t:border>

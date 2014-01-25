@@ -1,0 +1,22 @@
+<html xmlns:t="http://tapestry.apache.org/schema/tapestry_5_1_0.xsd">
+	<head>
+		<title>Celebrity Collector</title>
+		<link rel="stylesheet" href="${asset:context:/css/styles.css}"
+			type="text/css" />
+
+		<script src="//tinymce.cachefly.net/4.0/tinymce.min.js"></script>
+		<script>
+			tinymce.init({selector:'textarea'});
+		</script>
+
+	</head>
+	<body>
+		<p align="right">
+			<img src="${asset:context:/img/flag.gif}" align="middle" />
+			<t:actionlink t:id="switchlocale">
+				${localeLabel}
+			</t:actionlink>
+		</p>
+		<t:body />
+	</body>
+</html>

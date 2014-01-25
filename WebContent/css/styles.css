@@ -1,7 +1,7 @@
 DIV.t-beaneditor {
 	display: block;
-	background: white;
-	border: 2px solid green ;
+	background: BEIGE !important;
+	border: 2px solid brown !important;
 	padding: 2px;
 	font-family: "Trebuchet MS", Arial, sans-serif;
 }
@@ -18,4 +18,16 @@ DIV.t-beaneditor LABEL {
 input.t-beaneditor-submit {
 	position: relative;
 	left: 150px;
+}
+
+body,table,input,select {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10pt;
+}
+
+h1 {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 20pt;
+	font-weight: bold;
+	color: #204060;
 }
