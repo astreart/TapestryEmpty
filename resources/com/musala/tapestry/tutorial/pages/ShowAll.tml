@@ -1,4 +1,4 @@
-<t:border t:pageTitle="Add New Celebrity"
+<t:border t:pageTitle="All Celebrities in Collection"
 	xmlns:t="http://tapestry.apache.org/schema/tapestry_5_1_0.xsd">
 	<h1>All Celebrities in Collection</h1>
 

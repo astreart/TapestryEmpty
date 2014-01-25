@@ -1,6 +1,6 @@
 <html xmlns:t="http://tapestry.apache.org/schema/tapestry_5_1_0.xsd">
 	<head>
-		<title>Celebrity Collector</title>
+		<title>Celebrity Collector: ${pageTitle}</title>
 		<link rel="stylesheet" href="${asset:context:/css/styles.css}"
 			type="text/css" />
 
@@ -17,6 +17,32 @@
 				${localeLabel}
 			</t:actionlink>
 		</p>
-		<t:body />
+		<table width="100%">
+			<tr>
+				<td width="100" valign="top">
+					<br />
+					<br />
+					<br />
+					<t:if t:test="notIndex">
+						<t:pagelink t:page="Index">Home</t:pagelink>
+						<br />
+						<t:pagelink t:page="Registration">
+							Registration
+						</t:pagelink>
+						<br />
+						<t:pagelink t:page="ShowAll">
+							All Celebrities
+						</t:pagelink>
+						<br />
+						<t:pagelink t:page="AddCelebrity">
+							Add New
+						</t:pagelink>
+					</t:if>
+				</td>
+				<td>
+					<t:body />
+				</td>
+			</tr>
+		</table>
 	</body>
 </html>
