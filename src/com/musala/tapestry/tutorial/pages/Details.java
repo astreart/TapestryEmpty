@@ -16,6 +16,7 @@ public class Details {
 	@SessionState
 	private IDataSource dataSource;
 	//private MockDataSource dataSource;
+	@Persist
 	private Celebrity celebrity;
 
 	void onActivate(long id) {

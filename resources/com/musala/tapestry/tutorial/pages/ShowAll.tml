@@ -1,22 +1,19 @@
-<html xmlns:t="http://tapestry.apache.org/schema/tapestry_5_0_0.xsd">
-	<head>
-		<title>Celebrity Collector: ShowAll</title>
-	</head>
-	<body>
-		<h1>All Celebrities in Collection</h1>
+<t:border t:pageTitle="Add New Celebrity"
+	xmlns:t="http://tapestry.apache.org/schema/tapestry_5_1_0.xsd">
+	<h1>All Celebrities in Collection</h1>
 
-		<t:grid t:source="celebritySource" rowsPerPage="5" row="celebrity">
-			<!--  remove="id, biography, birthDateVerified" reorder="lastName,firstName,occupation,dateOfBirth">-->
-			<t:parameter name="lastNameCell">
-				<t:pagelink t:page="details" t:context="celebrity.id">
-					${celebrity.lastName}
-				</t:pagelink>
-			</t:parameter>
-		</t:grid>
-		<br />
-		<a href="#" t:type="PageLink" t:page="AddCelebrity">Add new Celebrity</a>
-		<br />
-		<a href="#" t:type="PageLink" t:page="Index">
-			Back to the Start Page</a>
-	</body>
-</html>
+	<t:grid t:source="celebritySource" rowsPerPage="5" row="celebrity">
+		<!-- remove="id, biography, birthDateVerified" reorder="lastName,firstName,occupation,dateOfBirth"> -->
+		<t:parameter name="lastNameCell">
+			<t:pagelink t:page="details" t:context="celebrity.id">
+				${celebrity.lastName}
+			</t:pagelink>
+		</t:parameter>
+	</t:grid>
+	<br />
+	<a href="#" t:type="PageLink" t:page="AddCelebrity">Add new Celebrity</a>
+	<br />
+	<a href="#" t:type="PageLink" t:page="Index">
+		Back to the Start Page
+	</a>
+</t:border>

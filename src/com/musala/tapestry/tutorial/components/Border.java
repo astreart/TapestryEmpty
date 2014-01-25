@@ -17,11 +17,13 @@ public class Border {
 
 	public String getLocaleLabel() {
 		if (localeLabel == null) {
-			if (currentLocale.equals(Locale.GERMAN)) {
-				localeLabel = new Locale("en").getDisplayName(Locale.ENGLISH);
-			} else {
-				localeLabel = new Locale("de").getDisplayName(Locale.GERMAN);
-			}
+			Locale.setDefault(Locale.ENGLISH);
+		}
+		
+		if (currentLocale.equals(Locale.GERMAN)) {
+			localeLabel = new Locale("en").getDisplayName(Locale.ENGLISH);
+		} else {
+			localeLabel = new Locale("de").getDisplayName(Locale.GERMAN);
 		}
 		return localeLabel;
 	}

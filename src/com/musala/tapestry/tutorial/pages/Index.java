@@ -20,44 +20,6 @@ import com.musala.tapestry.tutorial.util.Security;
 
 public class Index {
 
-	@Inject
-	private Locale currentLocale;
-
-	@Inject
-	private PersistentLocale persistentLocale;
-
-	@Persist
-	private String localeLabel;
-
-	public String getLocaleLabel() {
-		if (localeLabel == null) {
-			if (currentLocale.equals(Locale.GERMAN)) {
-				localeLabel = new Locale("en").getDisplayName(Locale.ENGLISH);
-			} else {
-				localeLabel = new Locale("de").getDisplayName(Locale.GERMAN);
-			}
-		}
-		return localeLabel;
-	}
-
-	@OnEvent(component = "switchlocale")
-	void changeLocale() {
-		localeLabel = currentLocale.getDisplayName(currentLocale);
-		if (currentLocale.equals(Locale.GERMAN)) {
-			persistentLocale.set(Locale.ENGLISH);
-		} else {
-			persistentLocale.set(Locale.GERMAN);
-		}
-	}
-
-	@Inject
-	@Path("context:/img/flag.gif")
-	private Asset flag;
-
-	public Asset getFlag() {
-		return flag;
-	}
-
 	public String getMyProperty() {
 		return "property from backend";
 	}

@@ -1,116 +1,114 @@
-<html xmlns:t="http://tapestry.apache.org/schema/tapestry_5_0_0.xsd">
-	<head>
-		<title>Celebrity Collector: Registration</title>
-	</head>
-	<body>
-		<h1>Registration</h1>
+<t:border t:pageTitle="Add New Celebrity"
+	xmlns:t="http://tapestry.apache.org/schema/tapestry_5_1_0.xsd">
+	<h1>Registration</h1>
 
-		<t:form t:id="registrationForm">
-			<t:errors />
-			<table>
+	<t:form t:id="registrationForm">
+		<t:errors />
+		<table>
+			<tr>
+				<td>
+					<t:label t:for="userName">
+						Label for user name
+					</t:label>
+					:
+				</td>
+				<td>
+					<input type="text" t:type="textfield" t:id="userName"
+						t:value="userName" t:validate="required,minlength=3,maxlength=8" />
+				</td>
+			</tr>
+			<t:if t:test="passwordNotSubmitted">
 				<tr>
 					<td>
-						<t:label t:for="userName">
-							Label for user name
+						<t:label t:for="password">
+							Label for password
 						</t:label>
 						:
 					</td>
 					<td>
-						<input type="text" t:type="textfield" t:id="userName"
-							t:value="userName" t:validate="required,minlength=3,maxlength=8" />
+						<input type="text" t:type="passwordfield" t:id="password"
+							t:value="password" t:validate="required,minlength=3,maxlength=8" />
 					</td>
 				</tr>
-				<t:if t:test="passwordNotSubmitted">
-					<tr>
-						<td>
-							<t:label t:for="password">
-								Label for password
-							</t:label>
-							:
-						</td>
-						<td>
-							<input type="text" t:type="passwordfield" t:id="password"
-								t:value="password" t:validate="required,minlength=3,maxlength=8" />
-						</td>
-					</tr>
-					<tr>
-						<td>
-							<t:label t:for="password2">
-								Label for password 2
-							</t:label>
-							:
-						</td>
-						<td>
-							<input type="text" t:type="passwordfield" t:id="password2"
-								t:label="Repeat password" t:value="password2" />
-						</td>
-					</tr>
-				</t:if>
 				<tr>
-					<td>Gender:</td>
 					<td>
-						<t:radiogroup t:value="gender">
-							<input type="radio" t:type="radio" t:value="male" />
-							Male
-							<input type="radio" t:type="radio" t:value="female" />
-							Female
-						</t:radiogroup>
+						<t:label t:for="password2">
+							Label for password 2
+						</t:label>
+						:
+					</td>
+					<td>
+						<input type="text" t:type="passwordfield" t:id="password2"
+							t:label="Repeat password" t:value="password2" />
 					</td>
 				</tr>
+			</t:if>
+			<tr>
+				<td>Gender:</td>
+				<td>
+					<t:radiogroup t:value="gender">
+						<input type="radio" t:type="radio" t:value="male" />
+						Male
+						<input type="radio" t:type="radio" t:value="female" />
+						Female
+					</t:radiogroup>
+				</td>
+			</tr>
 
-				<tr>
-					<td>Birth Date:</td>
-					<td>
-						<input type="text" t:type="datefield" t:value="dateOfBirth"
-							t:format="%d/%m/%y" />
-					</td>
-				</tr>
+			<tr>
+				<td>Birth Date:</td>
+				<td>
+					<input type="text" t:type="datefield" t:value="dateOfBirth"
+						t:format="%d/%m/%y" />
+				</td>
+			</tr>
 
-				<tr>
-					<td>
-						<t:label t:for="age" />
-					</td>
-					<td>
-						<input type="text" t:type="textfield" t:id="age"
-							t:validate="required,min=5,max=120" />
-					</td>
-				</tr>
+			<tr>
+				<td>
+					<t:label t:for="age" />
+				</td>
+				<td>
+					<input type="text" t:type="textfield" t:id="age"
+						t:validate="required,min=5,max=120" />
+				</td>
+			</tr>
 
-				<tr>
-					<t:if t:test="subscribe">
-						<td>
-							<t:label t:for="email" />
-						</td>
-						<td>
-							<input type="text" t:type="textfield" t:id="email" t:value="email" t:validate="regexp" />
-							<input type="checkbox" t:type="checkbox" t:value="unsubscribe"
+			<tr>
+				<t:if t:test="subscribe">
+					<td>
+						<t:label t:for="email" />
+					</td>
+					<td>
+						<input type="text" t:type="textfield" t:id="email" t:value="email"
+							t:validate="regexp" />
+						<input type="checkbox" t:type="checkbox" t:value="unsubscribe"
+							onclick="this.form.submit()" />
+						I don't want to subscribe
+					</td>
+					<t:parameter t:name="else">
+						<td colspan="2">
+							<input type="checkbox" t:type="checkbox" t:value="subscribe"
 								onclick="this.form.submit()" />
-							I don't want to subscribe
+							Check the box to subscribe to our Newsletter.
 						</td>
-						<t:parameter t:name="else">
-							<td colspan="2">
-								<input type="checkbox" t:type="checkbox" t:value="subscribe"
-									onclick="this.form.submit()" />
-								Check the box to subscribe to our Newsletter.
-							</td>
-						</t:parameter>
-					</t:if>
-				</tr>
-				<tr>
-					<td>Country:</td>
-					<td>
-						<select t:type="select" t:model="countries" t:value="country">
-							<option>Country 1</option>
-							<option>Country 2</option>
-						</select>
-					</td>
-				</tr>
-			</table>
-			<input type="submit" t:type="submit" t:id="submitButton" value="Submit" />
-			<input type="submit" t:type="submit" t:id="resetButton" value="Reset" />
-		</t:form>
-		<br />
-		<a href="#" t:type="PageLink" t:page="Index">
-			Back to the Start Page</a>
-	</body>
-</html>
+					</t:parameter>
+				</t:if>
+			</tr>
+			<tr>
+				<td>Country:</td>
+				<td>
+					<select t:type="select" t:model="countries" t:value="country">
+						<option>Country 1</option>
+						<option>Country 2</option>
+					</select>
+				</td>
+			</tr>
+		</table>
+		<input type="submit" t:type="submit" t:id="submitButton" value="Submit" />
+		<input type="submit" t:type="submit" t:id="resetButton" value="Reset" />
+	</t:form>
+	<br />
+	<a href="#" t:type="PageLink" t:page="Index">
+		Back to the Start Page
+	</a>
+</t:border>

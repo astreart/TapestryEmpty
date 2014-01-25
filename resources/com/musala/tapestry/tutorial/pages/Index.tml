@@ -1,101 +1,91 @@
-<html xmlns:t="http://tapestry.apache.org/schema/tapestry_5_1_0.xsd">
-	<head>
-		<title>${message:celebrity-collector}</title>
-	</head>
-	<body>
+<t:border t:pageTitle="Add New Celebrity"
+	xmlns:t="http://tapestry.apache.org/schema/tapestry_5_1_0.xsd">
 
-		<p align="right">
-			<img src="${flag}" />
-			<t:actionlink t:id="switchlocale">
-				${localeLabel}
-			</t:actionlink>
-		</p>
+	<p>
+		<t:pagelink t:page="terms">Terms and Conditions</t:pagelink>
+	</p>
 
-		<p>
-			<t:pagelink t:page="terms">Terms and Conditions</t:pagelink>
-		</p>
-		
-		<h1>${message:celebrity-collector}</h1>
-		<p> ${message:login-here}: </p>
-		<t:form t:id="loginForm">
+	<h1>${message:celebrity-collector}</h1>
+	<p> ${message:login-here}: </p>
+	<t:form t:id="loginForm">
 
-			<table>
-				<tr>
-					<td>
-						<t:label t:for="userName">
-							${message:user-name}
-						</t:label>
-						:
-					</td>
-					<td>
-						<input type="text" t:id="userName" t:type="TextField"
-							t:value="userName" t:validate="required" t:label="message:user-name" />
-					</td>
-				</tr>
-				<tr>
-					<td>
-						<t:label t:for="password">
-							${message:Password}
-						</t:label>
-						:
-					</td>
-					<td>
-						<input type="text" t:id="password" t:type="PasswordField"
-							t:value="password" t:validate="required" t:label="message:Password" />
-					</td>
-				</tr>
-				<tr>
-					<td colspan="2" align="left">
-						<input type="submit" value="${message:log-in}" />
-					</td>
-				</tr>
-			</table>
-		</t:form>
+		<table>
+			<tr>
+				<td>
+					<t:label t:for="userName">
+						${message:user-name}
+					</t:label>
+					:
+				</td>
+				<td>
+					<input type="text" t:id="userName" t:type="TextField"
+						t:value="userName" t:validate="required" t:label="message:user-name" />
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<t:label t:for="password">
+						${message:Password}
+					</t:label>
+					:
+				</td>
+				<td>
+					<input type="text" t:id="password" t:type="PasswordField"
+						t:value="password" t:validate="required" t:label="message:Password" />
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2" align="left">
+					<input type="submit" value="${message:log-in}" />
+				</td>
+			</tr>
+		</table>
+	</t:form>
 
-		<p>
-			<a href="#" t:type="PageLink" t:page="Registration">
-				${orRegisterLabel}</a>
-		</p>
-
-		<h1>Tapestry Start Page</h1>
-		<p> This is the start page for this application, a good place
-			to start
-			your modifications.
-			Just to prove this is live:
-		</p>
-		<p> The current date and time is: ${currentDate}. </p>
-		<p> The current date and time is: ${currentTime.hashCode()}. </p>
-		<p>
-			[
-			<!-- <t:pagelink t:page="Another">refresh</t:pagelink> -->
-			<a href="#" t:type="pageLink" t:page="Another">refresh</a>
-			]
-		</p>
-
-		<p>Submit a message:</p>
-		<t:form t:id="userInputForm">
-			<!-- <t:textfield t:value="message" /> -->
-			<input type="text" t:type="textfield" t:value="message" />
-			<input type="submit" value="Submit" />
-		</t:form>
-
-		<p> Submitted message: ${message}. </p>
-
-		<p>Here is the value : ${someValue}</p>
-
-		<a href="#" t:type="PageLink" t:page="secure/Payment">
-			Go to the secure Payment page
-			test
+	<p>
+		<a href="#" t:type="PageLink" t:page="Registration">
+			${orRegisterLabel}
 		</a>
+	</p>
 
-		<br />
+	<h1>Tapestry Start Page</h1>
+	<p> This is the start page for this application, a good place
+		to start
+		your modifications.
+		Just to prove this is live:
+	</p>
+	<p> The current date and time is: ${currentDate}. </p>
+	<p> The current date and time is: ${currentTime.hashCode()}. </p>
+	<p>
+		[
+		<!-- <t:pagelink t:page="Another">refresh</t:pagelink> -->
+		<a href="#" t:type="pageLink" t:page="Another">refresh</a>
+		]
+	</p>
 
-		<a href="#" t:type="PageLink" t:page="secure/Page">
-			Go to the secure page
-		</a>
+	<p>Submit a message:</p>
+	<t:form t:id="userInputForm">
+		<!-- <t:textfield t:value="message" /> -->
+		<input type="text" t:type="textfield" t:value="message" />
+		<input type="submit" value="Submit" />
+	</t:form>
 
-		<t:if t:test="userExists">
-			<p>The user is ${user.firstName} ${user.lastName}</p>
-		</t:if>
-	</body>
-</html>
+	<p> Submitted message: ${message}. </p>
+
+	<p>Here is the value : ${someValue}</p>
+
+	<a href="#" t:type="PageLink" t:page="secure/Payment">
+		Go to the secure Payment page
+		test
+	</a>
+
+	<br />
+
+	<a href="#" t:type="PageLink" t:page="secure/Page">
+		Go to the secure page
+	</a>
+
+	<t:if t:test="userExists">
+		<p>The user is ${user.firstName} ${user.lastName}</p>
+	</t:if>
+</t:border>

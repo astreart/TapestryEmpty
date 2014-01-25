@@ -3,6 +3,7 @@ package com.musala.tapestry.tutorial.model;
 import java.util.Date;
 import java.text.SimpleDateFormat;
 
+import org.apache.tapestry5.annotations.Persist;
 import org.apache.tapestry5.ioc.annotations.Inject;
 
 public class Celebrity {
