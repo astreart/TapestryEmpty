@@ -4,6 +4,7 @@ import java.util.Date;
 import java.util.Locale;
 
 import org.apache.tapestry5.Asset;
+import org.apache.tapestry5.SelectModel;
 import org.apache.tapestry5.annotations.Component;
 import org.apache.tapestry5.annotations.InjectPage;
 import org.apache.tapestry5.annotations.OnEvent;
@@ -15,7 +16,9 @@ import org.apache.tapestry5.ioc.Messages;
 import org.apache.tapestry5.ioc.annotations.Inject;
 import org.apache.tapestry5.services.PersistentLocale;
 
+import com.musala.tapestry.tutorial.components.DateInput;
 import com.musala.tapestry.tutorial.model.User;
+import com.musala.tapestry.tutorial.util.CelebritySelectModel;
 import com.musala.tapestry.tutorial.util.Security;
 
 public class Index {
@@ -142,5 +145,19 @@ public class Index {
 
 	public String getOrRegisterLabel() {
 		return messages.get("or-register");
+	}
+
+	private Date theDate;
+
+	public Date getTheDate() {
+		return theDate;
+	}
+
+	public void setTheDate(Date theDate) {
+		this.theDate = theDate;
+	}
+
+	public Date getLowerLimit() {
+		return new Date();
 	}
 }

@@ -1,0 +1,7 @@
+<html xmlns:t="http://tapestry.apache.org/schema/tapestry_5_0_0.xsd">
+	<t:select t:value="day" t:model="dayModel" t:encoder="encoder"
+		t:disabled="disabled"/>
+		<t:select t:value="month" t:model="monthModel" t:disabled="disabled" />
+		<t:select t:value="year" t:model="yearModel" t:encoder="encoder"
+			t:disabled="disabled" />
+</html>

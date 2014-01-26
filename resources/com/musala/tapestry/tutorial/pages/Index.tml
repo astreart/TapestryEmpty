@@ -88,4 +88,12 @@
 	<t:if t:test="userExists">
 		<p>The user is ${user.firstName} ${user.lastName}</p>
 	</t:if>
+
+	<t:form>
+		<t:errors />
+		<t:label for="testDate">Date test</t:label>
+		:
+		<t:dateinput t:date="theDate" t:id="testDate" t:dateFrom="lowerLimit" />
+		<input type="submit" value="Submit" />
+	</t:form>
 </t:border>
