@@ -16,7 +16,7 @@ import com.musala.tapestry.tutorial.pages.Registration;
 import com.musala.tapestry.tutorial.pages.ShowAll;
 
 public class Border {
-	@Inject
+	/*@Inject
 	private PersistentLocale persistentLocale;
 	@Inject
 	private Locale currentLocale;
@@ -44,7 +44,7 @@ public class Border {
 		} else {
 			persistentLocale.set(Locale.GERMAN);
 		}
-	}
+	}*/
 
 	@Inject
 	private ComponentResources resources;

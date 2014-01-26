@@ -1,0 +1,7 @@
+<html xmlns:t="http://tapestry.apache.org/schema/tapestry_5_0_0.xsd">
+	<t:form t:id="switcher">
+		<img src="${asset:images/flag.gif}" align="absmiddle" />
+		<t:select t:value="selectedLocale" t:model="localeModel"
+			t:encoder="localeEncoder" onchange="this.form.submit()" />
+	</t:form>
+</html>

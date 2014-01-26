@@ -87,6 +87,11 @@ public class Index {
 		return user;
 	}
 
+	/*@OnEvent(value = "success", component = "loginForm")
+	Object showCollection() {
+		return ShowAll.class;
+	}*/
+
 	Object onSubmitFromLoginForm() {
 		Class nextPage = null;
 		User authenticatedUser = null;
