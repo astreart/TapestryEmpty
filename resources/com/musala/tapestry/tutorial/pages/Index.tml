@@ -2,7 +2,8 @@
 	xmlns:t="http://tapestry.apache.org/schema/tapestry_5_1_0.xsd">
 
 	<div align="right">
-		<t:localeswitcher t:supportedLocales="en,de" />
+		<!-- <t:localeswitcher t:supportedLocales="en,de" /> -->
+		<t:localeswitcher/>
 	</div>
 	
 	<p>

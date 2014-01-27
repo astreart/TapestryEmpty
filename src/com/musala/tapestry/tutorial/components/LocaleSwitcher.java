@@ -8,13 +8,17 @@ import org.apache.tapestry5.annotations.Parameter;
 import org.apache.tapestry5.ioc.annotations.Inject;
 import org.apache.tapestry5.services.PersistentLocale;
 
+import com.musala.tapestry.tutorial.services.SupportedLocales;
 import com.musala.tapestry.tutorial.util.LocaleEncoder;
 import com.musala.tapestry.tutorial.util.LocaleSelectModel;
 
 public class LocaleSwitcher {
 
-	@Parameter(defaultPrefix = "literal", required = true)
-	private String supportedLocales;
+	/*@Parameter(defaultPrefix = "literal", required = true)
+	private String supportedLocales;*/
+	@Inject
+	private SupportedLocales supportedLocales;
+	
 	@Inject
 	private PersistentLocale persistentLocale;
 
@@ -27,7 +31,7 @@ public class LocaleSwitcher {
 	}
 
 	public SelectModel getLocaleModel() {
-		return new LocaleSelectModel(supportedLocales);
+		return new LocaleSelectModel(supportedLocales.getSupportedLocales());
 	}
 
 	public ValueEncoder getLocaleEncoder() {
