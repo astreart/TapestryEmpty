@@ -1,11 +1,13 @@
 <t:border t:pageTitle="Initial Page"
 	xmlns:t="http://tapestry.apache.org/schema/tapestry_5_1_0.xsd">
 
+	<!-- <span t:type="mylib/DateInput" t:date="theDate" /> <span t:type="mylib/LocaleSwitcher" 
+		/> -->
 	<div align="right">
 		<!-- <t:localeswitcher t:supportedLocales="en,de" /> -->
-		<t:localeswitcher/>
+		<t:localeswitcher />
 	</div>
-	
+
 	<p>
 		<t:pagelink t:page="terms">Terms and Conditions</t:pagelink>
 	</p>
